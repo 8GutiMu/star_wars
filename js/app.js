@@ -8,7 +8,8 @@ var cargarPersonajes = function () {
         dataType: 'json',
         success: function (response) {
             var personajes = response.results;
-            $("#total").text(response.count);
+           var total = response.count;
+            mostrarTotalPersonajes(total);
             mostrarPersonajes(personajes);
         },
         error: function (error) {
@@ -17,6 +18,9 @@ var cargarPersonajes = function () {
     });
 };
 
+var mostrarTotalPersonajes = function(total){
+     $("#total").text(total);
+}
 var mostrarPersonajes = function(personajes){
     var $ul = $("#personajes")
             personajes.forEach( function(personaje){
