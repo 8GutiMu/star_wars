@@ -3,8 +3,7 @@ var cargarPagina = function () {
 };
 
 var cargarPersonajes = function () {
-    $.ajax({
-        url: 'http://swapi.co/api/people/',
+    $.ajax('http://swapi.co/api/people/',{
         method: 'GET',
         dataType: 'json',
         success: function (response) {
