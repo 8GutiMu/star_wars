@@ -4,7 +4,7 @@ var cargarPagina = function () {
 
 var cargarPersonajes = function () {
     var url = 'http://swapi.co/api/people/';
-   $.get(url, function(response){
+   $.getJSON(url, function(response){//se agrega JSON a $.get --> con esto espera automáticamente un JSON / se usa $.get cuando no se sabe de que tipo será la respuesta
        var personajes = response.results;
        var total = response.count;
        mostrarTotalPersonajes(total);
