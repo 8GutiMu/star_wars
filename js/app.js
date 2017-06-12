@@ -7,7 +7,14 @@ var cargarPersonajes = function () {
         method: 'GET',
         dataType: 'json',
         success: function (response) {
-            console.log("respuesta ", response);
+            var personajes = response.results;
+            var $ul = $("#personajes")
+            personajes.forEach( function(personaje){
+                var $li = $("<li />");
+                $li.text(personaje.name);
+                $ul.append($li);
+            })
+            
         },
         error: function (error) {
             console.log("error ", error);
