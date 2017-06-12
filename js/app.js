@@ -21,7 +21,7 @@ var mostrarPersonajes = function (personajes) {
         var $li = $("<li />");
         $li.text(personaje.name + "-" + personaje.height + "cm");
         $ul.append($li);
-    })
+})
 }
 
 
